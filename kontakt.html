@@ -1,0 +1,19 @@
+---
+title: Kontakt
+layout: page
+---
+
+<div class="content">
+    <p class="primary-text">
+        <amp-img src="{{ site.baseurl }}/uploads/outline-email-24px.svg" layout="fixed" height="23" width="23"
+            noloading></amp-img> {{ site.mail }}
+        <br>
+        <amp-img src="{{ site.baseurl }}/uploads/outline-local_phone-24px.svg" layout="fixed" height="23" width="23"
+            noloading></amp-img> {{ site.phone }}
+    </p>
+    <div class="flex">
+        {% for location in site.locations %}
+        {% include location.html %}
+        {% endfor %}
+    </div>
+</div>

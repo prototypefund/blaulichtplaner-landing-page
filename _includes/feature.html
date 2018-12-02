@@ -1,0 +1,23 @@
+<div class="features-block">
+
+    {% if block.ismobile %}
+    <div class="mobile-img">
+        <amp-img layout="responsive" width="1" height="2" class="features-hide-small" src="{{ site.baseurl }}{{ block.image }}"></amp-img>
+    </div>
+    {% else %}
+    <div class="desktop-img">
+        <amp-img layout="responsive" width="3" height="2" class="features-hide-small" src="{{ site.baseurl }}{{ block.image }}"></amp-img>
+    </div>
+    {% endif %}
+    <div class="text-container">
+        <div class="text">
+            <h3 class="block-title">{{ block.title }}</h3>
+            {% if block.ismobile %}
+<amp-img layout="fixed" width="180" height="320" src="{{ site.baseurl }}{{ block.image }}" class="features-hide-big"></amp-img>
+{% else %}
+<amp-img layout="responsive" width="3" height="2" src="{{ site.baseurl }}{{ block.image }}" class="desktop-img features-hide-big" class="features-hide-big"></amp-img>
+{% endif %}
+            {{ block.content | markdownify }}
+        </div>
+    </div>
+</div>

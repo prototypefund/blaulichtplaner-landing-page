@@ -1,0 +1,20 @@
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans|IBM+Plex+Mono" rel="stylesheet">
+<style amp-custom>
+{% capture scss %}
+{% include custom.scss %}
+
+{% for block in site.main %}
+.{{ block.slug }}
+{
+    background: {{ block.background_color }};
+    color: {{ block.color }};
+}
+{% endfor %}
+.features-head-block{
+    background: $c;
+    color: $w;
+}
+{% endcapture %}
+{{ scss | scssify }}
+</style>

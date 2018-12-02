@@ -1,0 +1,17 @@
+<div class="article-block">
+    <h2>
+        <amp-img noloading layout="fixed" height="43" width="43" src="{{ site.baseurl }}/uploads/baseline-location_city-24px.svg"></amp-img>
+        {{ location.title }}
+    </h2>
+    <address class="primary-text">
+        <p>
+            <amp-img src="{{ site.baseurl }}/uploads/outline-place-24px.svg" layout="fixed" height="23" width="23"
+                noloading></amp-img>{{ location.street }}<br />
+                {{ location.zip }} {{ location.city }}
+        </p>
+    </address>
+    <p class="primary-text">
+        <amp-img src="{{ site.baseurl }}/uploads/outline-local_phone-24px.svg" layout="fixed" height="23" width="23"
+            noloading></amp-img> {{ location.phone }}
+    </p>
+</div>

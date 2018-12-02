@@ -1,0 +1,17 @@
+<footer>
+    <div class="content">
+        <span class="footer-title"><span class="icon">{{ site.icon }}</span> {{ site.title }}</span>
+        <div class="footer-links">
+            {% for link in site.footer_links %}
+            <a class="footer-link" href="{{ site.baseurl }}{{ link.link }}">{{ link.title }}</a>
+            {% endfor %}
+            <a class="footer-link" href="https://github.com/blaulichtplaner">GITHUB
+            </a>
+        </div>
+        <div class="footer-sponsor">
+            <amp-img layout="fixed" height="30" width="178" noloading src="{{ site.baseurl }}/uploads/honmed.png"></amp-img>
+            <amp-img layout="fixed" height="110" width="155" noloading src="{{ site.baseurl }}/uploads/bmbf.jpg"></amp-img>
+            <amp-img layout="fixed" height="90" width="54" noloading src="{{ site.baseurl }}/uploads/PrototypeFund-P-Logo.png"></amp-img>
+        </div>
+    </div>
+</footer>

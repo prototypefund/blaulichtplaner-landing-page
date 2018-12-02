@@ -1,0 +1,25 @@
+{% assign count = 1 %}
+{% assign blocks = site.main | sort: 'position' %}
+{% for block in blocks %}
+{% assign mod = count | modulo: 2 %}
+
+<div class="desktop-block {{ block.slug }}">
+    {% if mod == 0 %}
+    <div class="text">
+        <div class="left {% if block.isnegative %}negative{% endif %}">
+            <h2 class="block-title">{{ block.title }}</h2>
+            <amp-img layout="responsive" width="3" height="2" src="{{ site.baseurl }}{{ block.image }}" class="hide-big"></amp-img>
+            {{ block.content | markdownify }}
+        </div>
+    </div>
+    <amp-img layout="responsive" width="3" height="2" src="{{ site.baseurl }}{{ block.image }}" class="hide-small"></amp-img>
+    {% else %}
+    <amp-img layout="responsive" width="3" height="2" src="{{ site.baseurl }}{{ block.image }}" class="hide-small"></amp-img>
+    <div class="text">
+        <div class="right {% if block.isnegative %}negative{% endif %}">
+            <h2 class="block-title">{{ block.title }}</h2>
+            <amp-img layout="responsive" width="3" height="2" src="{{ site.baseurl }}{{ block.image }}" class="hide-big"></amp-img>
+            {{ block.content | markdownify }}
+        </div>
+    </div> {% endif %}
+</div> {% assign count=count | plus: 1 %} {% endfor %}

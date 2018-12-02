@@ -1,0 +1,94 @@
+---
+title: Blaulichtplaner
+timezone: Europe/Berlin
+collections:
+  features:
+    title: App-Features
+    output: false
+  posts:
+    title: Posts
+    output: true
+  locations:
+    title: Standorte
+    output: false
+  main:
+    title: Startseite
+    output: false
+  authors:
+    title: Team
+    output: false
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: main
+  values:
+    image: 
+    title: 
+    content: 
+    color: "$bl"
+    background_color: "$w"
+- scope:
+    path: ''
+    type: features
+  values:
+    image: 
+    title: 
+    content: 
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    author: Adrian Stabiszewski
+- scope:
+    path: ''
+    type: authors
+  values:
+    image: "/uploads/outline-person-24px.svg"
+    title: Vorname Nachname
+    subtitle: Bezeichnung
+- scope:
+    path: ''
+    type: locations
+  values:
+    title: Stadt
+    address_content: 
+    phone: 
+    mail: 
+permalink: pretty
+description: Cloud-Dienstplanung und Abrechnung für Notarztwesen und Rettungsdienst
+links: 
+plugins:
+- jekyll-sass-converter
+sass:
+  style: compressed
+url: https://himsel.me/blaulichtplaner-de
+baseurl: 
+theme_color: 
+nav_links:
+- title: Home
+  link: "/index"
+- title: Blog
+  link: "/blog"
+- title: Kontakt
+  link: "/kontakt"
+- title: Team
+  link: "/team"
+footer_links:
+- title: Impressum
+  link: "/impressum"
+- title: Datenschutz
+  link: "/datenschutz"
+icon: "&#x1f4a1;"
+exclude:
+- functions/
+mail: lukas@himsel.me
+phone: '0123456789'

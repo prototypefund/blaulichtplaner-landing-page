@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="content">
+    <h1 class="page-title">
+        <a class="icon post-back-arrow" href="{{ site.baseurl }}/blog"><amp-img src="{{ site.baseurl }}/uploads/outline-arrow_back-24px.svg" height="47" width="47" layout="fixed" noloading></amp-img></a>
+        {{ page.title }}
+    </h1>
+    <span class="post-subtitle"><span class="post-date"><amp-img src="{{ site.baseurl }}/uploads/outline-calendar_today-24px.svg" layout="fixed" height="18" width="18"></amp-img> {{ page.date | date: '%d.%m.%Y' }}</span></span>
+
+</div>
+<article class="content">
+    {{ content }}
+</article>
+<div class="content">
+    <amp-social-share type="twitter" class="post-share" height="30" width="30"></amp-social-share>
+    <amp-social-share type="email" class="post-share" height="30" width="30"></amp-social-share>
+    
+    <p><i>Autor:</i>
+        <a href="{{ site.baseurl }}/team">{{ page.author }}</a>
+        </p>
+
+    <div class="chips">
+        <i>Tags:</i>
+        {% for tag in page.tags %}
+        <span class="chip">{{ tag }}</span>
+        {% endfor %}
+    </div>
+</div>

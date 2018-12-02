@@ -1,0 +1,31 @@
+.post-subtitle {
+    color: $b;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.post-date {
+    color: $g;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+amp-social-share.post-share {
+    background-color: $g;
+    border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    .post-subtitle {
+        margin-left: calc(#{$four} * 2);
+    }
+
+    article.content {
+        padding: 0 $four $four;
+    }
+}
+
+@media (max-width: 767px) {
+    article.content {
+        padding: 0 $two $two;
+    }
+}

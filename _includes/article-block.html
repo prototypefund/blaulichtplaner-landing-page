@@ -1,0 +1,15 @@
+<div class="article-block">
+    <h2 class="article-title">
+        {{ post.title }}
+    </h2>
+    <div class="chips">
+        <i>Tags:</i>
+        {% for tag in post.tags %}
+        <span class="chip">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    <p>{{ post.excerpt | truncatewords: 15 | strip_html }}</p>
+    <div class="article-action">
+        <a class="button" href="{{ site.baseurl }}{{ post.url }}">LESEN <amp-img src="{{ site.baseurl }}/uploads/outline-arrow_forward-24px.svg" layout="fixed" height="18" width="18"></amp-img></a>
+    </div>
+</div>

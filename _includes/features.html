@@ -1,0 +1,13 @@
+<div class="features-head-block">
+    <div class="content">
+        <h2>Die App-Features</h2>
+    </div>
+    <amp-carousel height="700" layout="fixed-height" type="slides">
+        {% assign blocks = site.features | sort: 'position' %}
+        {% for block in blocks %}
+        <div>
+            {% include feature.html %}
+        </div>
+        {% endfor %}
+    </amp-carousel>
+</div>

@@ -1,0 +1,92 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>{{ page.title }}</title>
+
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+
+<meta name="description" content="{{ site.description }}">
+<meta name="robots" content="index,follow">
+{% if page.author %}
+<meta name="author" content="{{ page.author }}">
+{% endif %}
+<meta itemprop="name" content="{{ site.title }}">
+<meta name="theme-color" content="{{ site.theme_color }}">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+
+<link rel="shortcut icon" href="{{ "/uploads/logo.png" | prepend: site.baseurl }}">
+
+<meta name="msapplication-TileImage" content="{{ site.baseurl }}/uploads/logo.png">
+<meta name="msapplication-TileColor" content="{{ site.theme_color }}">
+
+<meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ site.title }}: {{ page.title }}" />
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+{% if page.image %}
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image }}" />
+<meta property="og:image:type" content="image/png" />
+{% endif %}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="blaulichtplaner" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %} - {{ site.title }}" />
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.title }}: {{ site.description }}{% endif %}" />
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{% if page.image %}{{ page.image }}{% else %}{% if page.gallery %}{{ page.gallery[0].image }}{% else %}/uploads/banner.png{% endif %}{% endif %}" />
+
+<link href="{{ "/news/feed.xml" | prepend: site.baseurl }}" type="application/rss+xml" rel="alternate" title="RSS feed">
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "{{ site.title }}",
+        "headline": "{{ site.headline }}",
+        "url": "{{ site.url }}",
+        "image": "{{ site.url }}{{ site.baseurl }}/uploads/banner.png",
+        "description": "{{ site.description }}",
+        "publisher": {
+            "@type": "Organization",
+            "logo": "{{ site.url }}{{ site.baseurl }}/uploads/logo.png",
+            "url": "{{ site.url }}",
+            "name": "{{ site.title }}"
+        }
+    }
+</script>
+
+{% if page.path contains '_posts' %}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://google.com/article"
+        },
+        "headline": "{{ page.title }}",
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}{{ site.baseurl }}{{ page.gallery[0].image }}",
+            "height": 720,
+            "width": 1280
+        },
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        "dateModified": "{{ page.date | date_to_xmlschema }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ page.author }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.url }}{{ site.baseurl }}/uploads/banner_600x60.png",
+                "width": 600,
+                "height": 60
+            }
+        },
+        "description": "{{ page.description }}"
+    }
+</script>
+{% endif %}

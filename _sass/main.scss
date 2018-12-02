@@ -1,0 +1,30 @@
+@charset "utf-8";
+$w: white;
+$b:#3f51b5;
+$g:#777;
+$lg:#F4F4F4;
+$c: #5CB5B5;
+$lc: lightcoral;
+$bl: black;
+$border-radius: .4rem;
+$one: .5rem;
+$two: 1rem;
+$three: 1.5rem;
+$four: 2rem;
+$nav-mobile-height: 6.1rem;
+$nav-height: 3.55rem;
+
+html,
+body {
+    color: $bl;
+    background: $w;
+}
+
+@import "typography";
+@import "grid";
+@import "nav";
+@import "footer";
+@import "hero-block";
+@import "main-block";
+@import "features-block";
+@import "post";
